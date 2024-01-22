@@ -1,5 +1,6 @@
 package com.app.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Writer {
@@ -28,10 +29,16 @@ public class Writer {
         return posts;
     }
 
-
     public void setName(String firsName, String lastName, List<Post> posts) {
         this.firsName = firsName;
         this.lastName = lastName;
         this.posts = posts;
+    }
+
+    public void addPostToWriter(Post post) {
+        posts = (posts == null)
+                ? new ArrayList<>()
+                : posts;
+        posts.add(post);
     }
 }
